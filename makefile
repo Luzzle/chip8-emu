@@ -1,5 +1,5 @@
 CC := g++
-CFLAGS := -Wall
+CFLAGS := -Wall -std=c++11
 TARGET := build/chip8
 
 SRC_DIR := src/
