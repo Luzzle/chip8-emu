@@ -22,7 +22,7 @@ endif
 
 all: $(TARGET)
 
-$(TARGET): $(MAIN)
+$(TARGET): $(C_FILES)
 	$(CC) $(CFLAGS) -o $(TARGET) $(C_FILES)
 
 run: $(TARGET)
