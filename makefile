@@ -2,7 +2,6 @@ CC := g++
 CFLAGS := -Wall -std=c++11
 TARGET := build/chip8
 
-SRC_DIR := src/
 SRC_FILES := $(wildcard src/*.cpp)
 
 ifeq ($(OS), Windows_NT)
