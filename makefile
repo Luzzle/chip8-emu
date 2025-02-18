@@ -2,7 +2,8 @@ CC := g++
 CFLAGS := -Wall -std=c++11
 TARGET := build/chip8
 
-SRC_FILES := $(wildcard src/*.cpp)
+SRC_DIR := src/
+SRC_FILES := $(wildcard $(SRC_DIR)*.cpp)
 
 ifeq ($(OS), Windows_NT)
 # add build dependencies for windows
