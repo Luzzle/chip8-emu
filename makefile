@@ -3,9 +3,7 @@ CFLAGS := -Wall -std=c++11
 TARGET := build/chip8
 
 SRC_DIR := src/
-SRC_FILES := main.cpp Window.cpp Stack.cpp CPU.cpp
-
-C_FILES := $(addprefix $(SRC_DIR), $(SRC_FILES))
+SRC_FILES := $(wildcard src/*.cpp)
 
 ifeq ($(OS), Windows_NT)
 # add build dependencies for windows
@@ -23,7 +21,7 @@ endif
 all: $(TARGET)
 
 $(TARGET): $(C_FILES)
-	$(CC) $(CFLAGS) -o $(TARGET) $(C_FILES)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC_FILES)
 
 run: $(TARGET)
 	@$(TARGET)
