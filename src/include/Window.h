@@ -5,18 +5,18 @@
 #include <string>
 
 class Window{
-    public:
-        Window();
-        
-        void pollEvent();
-        void draw();
-        bool windowShouldClose();
-
     private:
         SDL_Window* p_window;
         SDL_Surface* p_windowSurface;
 
         bool b_windowShouldClose = false;
+        
+    public:
+        Window();
+        
+        void pollEvents();
+        void draw();
+        bool windowShouldClose();
 };
 
 #endif

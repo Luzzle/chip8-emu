@@ -3,7 +3,7 @@ CFLAGS := -Wall -std=c++11
 TARGET := build/chip8
 
 SRC_DIR := src/
-SRC_FILES := *.cpp
+SRC_FILES := main.cpp Window.cpp Stack.cpp CPU.cpp
 
 C_FILES := $(addprefix $(SRC_DIR), $(SRC_FILES))
 

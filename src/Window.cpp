@@ -9,11 +9,7 @@ Window::Window(){
         exit(-1);
     }
 
-    p_window = SDL_CreateWindow("SDL2 Window",
-                                          SDL_WINDOWPOS_CENTERED,
-                                          SDL_WINDOWPOS_CENTERED,
-                                          680, 480,
-                                          0);
+    p_window = SDL_CreateWindow("Chip-8 Emulator", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 320, SDL_WINDOW_RESIZABLE);
 
     if(!p_window)
     {
@@ -31,7 +27,7 @@ Window::Window(){
 
 }
 
-void Window::pollEvent(){
+void Window::pollEvents(){
     SDL_Event e;
     if (SDL_PollEvent(&e) > 0)
     {
