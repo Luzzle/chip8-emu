@@ -20,3 +20,4 @@ void Stack::push(u_int16_t addr){
 Stack::Stack(){
     stack = new std::deque<u_int16_t>();
 }
+

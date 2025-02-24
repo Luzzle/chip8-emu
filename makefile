@@ -4,6 +4,7 @@ TARGET := build/chip8
 
 SRC_DIR := src/
 SRC_FILES := $(wildcard $(SRC_DIR)*.cpp)
+HEADER_FILES := $(wildcard $(SRC_DIR)/include/*.h)
 
 ifeq ($(OS), Windows_NT)
 # add build dependencies for windows
@@ -20,11 +21,11 @@ endif
 
 all: $(TARGET)
 
-$(TARGET): $(C_FILES)
+$(TARGET): $(SRC_FILES) $(HEADER_FILES)
 	$(CC) $(CFLAGS) -o $(TARGET) $(SRC_FILES)
 
 run: $(TARGET)
-	@$(TARGET)
+	@$(TARGET) roms/testrom.ch8
 
 clean: $(TARGET)
 	rm $(TARGET)

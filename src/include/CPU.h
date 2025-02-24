@@ -5,23 +5,28 @@
 
 #include <string>
 
-using BYTE = unsigned char;
+using BYTE = u_int8_t;
 
 class CPU{
     private:
-        u_int16_t pc = 0;
-        u_int16_t i = 0;
-        // stack
-        u_int16_t V[16];
+        // registers
+        u_int16_t pc;
+        u_int16_t i;
+
+        u_int8_t V[16];
+        Stack stack;
+
+        // ram
+        BYTE RAM[4096];
+        BYTE gfx[64 * 32];
         
+        u_int16_t opcode;
 
     public:
         CPU();
-        Stack* stack = new Stack();
-
-        BYTE RAM[4096];
-
         
+        void loadROM(char*);
+
 };
 
 #endif
